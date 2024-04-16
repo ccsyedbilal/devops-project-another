@@ -77,6 +77,28 @@ pipeline {
             }
         }
 
+         stage('Copy .env.sample to .env') {
+    steps {
+        script {
+            sh 'cp .env.sample .env'
+        }
+    }
+}
+
+        stage('create db schema') {
+    steps {
+        script {
+            sh 'bunx prisma db push'
+        }
+}
+
+         stage('dev build') {
+    steps {
+        script {
+            sh 'bun run dev'
+        }
+}
+        
         
    
         // Add more stages as needed
