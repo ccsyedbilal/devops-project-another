@@ -59,7 +59,7 @@ pipeline {
 
         stage('Install Dependencies for next-app') {
     steps {
-        dir('/var/lib/jenkins/workspace/my_nextjs_app_second') {
+        dir('/var/lib/jenkins/workspace/nextapp') {
             sh 'bun install'
         }
     }
@@ -69,7 +69,7 @@ pipeline {
             steps {
                 script {
                     // Change directory to where docker-compose.yml is located
-                    dir('/var/lib/jenkins/workspace/my_nextjs_app_second') {
+                    dir('/var/lib/jenkins/workspace/nextapp') {
                         // Run docker-compose up to deploy MongoDB container
                      sh 'docker compose up -d'
 
