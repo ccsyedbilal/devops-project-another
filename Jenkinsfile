@@ -85,20 +85,6 @@ pipeline {
     }
 }
 
-        stage('create db schema') {
-    steps {
-        script {
-            sh 'bunx prisma db push'
-        }
-}
-
-         stage('dev build') {
-    steps {
-        script {
-            sh 'bun run dev'
-        }
-}
-        
         
    
         // Add more stages as needed
