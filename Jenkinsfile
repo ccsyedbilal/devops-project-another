@@ -86,10 +86,10 @@ pipeline {
     }
 }
 
-        stage('development testing') {
+        stage('create db schema') {
     steps {
         script {
-            sh 'bun run dev'
+            sh 'bunx prisma db push'
         }
 }
         
