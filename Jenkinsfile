@@ -85,6 +85,16 @@ pipeline {
         }
     }
 }
+
+        stage('development testing') {
+    steps {
+         dir('/var/lib/jenkins/workspace/my_nextjs_app_second') {
+                        // Run docker-compose up to deploy MongoDB container
+                     sh 'bun run dev'
+
+                    }
+    }
+}
         
 
         // Add more stages as needed
